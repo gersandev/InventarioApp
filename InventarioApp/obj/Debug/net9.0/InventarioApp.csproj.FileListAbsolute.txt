@@ -1,0 +1,14 @@
+C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\bin\Debug\net9.0\InventarioApp.exe
+C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\bin\Debug\net9.0\InventarioApp.deps.json
+C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\bin\Debug\net9.0\InventarioApp.runtimeconfig.json
+C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\bin\Debug\net9.0\InventarioApp.dll
+C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\bin\Debug\net9.0\InventarioApp.pdb
+C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\obj\Debug\net9.0\InventarioApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\obj\Debug\net9.0\InventarioApp.AssemblyInfoInputs.cache
+C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\obj\Debug\net9.0\InventarioApp.AssemblyInfo.cs
+C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\obj\Debug\net9.0\InventarioApp.csproj.CoreCompileInputs.cache
+C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\obj\Debug\net9.0\InventarioApp.dll
+C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\obj\Debug\net9.0\refint\InventarioApp.dll
+C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\obj\Debug\net9.0\InventarioApp.pdb
+C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\obj\Debug\net9.0\InventarioApp.genruntimeconfig.cache
+C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\obj\Debug\net9.0\ref\InventarioApp.dll
