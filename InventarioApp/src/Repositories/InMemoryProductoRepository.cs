@@ -48,7 +48,7 @@ public class InMemoryProductoRepository : IProductoRepository
 
     public int Cantidad => _productos.Count;
 
-    public IEnumerable<Producto> FiltrarPorCategoria(CategoriaProducto categoria)
+    public IEnumerable<Producto> BuscarPorCategoria(CategoriaProducto categoria)
     {
         return _productos.Where(p => p.Categoria == categoria);
     }
@@ -102,5 +102,9 @@ public class InMemoryProductoRepository : IProductoRepository
     {
         return _productos.GroupBy(p => p.Categoria)
                          .ToDictionary(g => g.Key, g => g.Sum(p => p.ValorTotal));
+    }
+    public IEnumerable<Producto> ObtenerStockBajo(int umbral = 5)
+    {
+        return _productos.Where(p => p.Cantidad < umbral);
     }
 }

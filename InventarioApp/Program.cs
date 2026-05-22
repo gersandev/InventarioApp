@@ -1,78 +1,50 @@
-﻿// ============================================================
-// SISTEMA DE INVENTARIO - Clase 1.1
-// Estado: Mensaje de bienvenida
-// ============================================================
+﻿using InventarioApp.Models;
+using InventarioApp.Repositories;
+using InventarioApp.Factories;
+using InventarioApp.Infraestructure;
 
-using System.Reflection;
+Console.WriteLine("====== InventarioApp ======");
+var fileManager = new FileManager();
+string contenido = "Inventario actualizado";
+fileManager.Escribir("inventario.txt", contenido);
 
-//Variables
-int cantidadProductos = 0;
-decimal valorTotalDelInventario = 0.00m;
-bool sistemaActivo = true;
+string leerContenido = fileManager.Leer("inventario.txt");
+Console.WriteLine($"Contenido del archivo: {leerContenido}");
 
-MostarBanner();
-bool continuar = true;
+var repositorio = new InMemoryProductoRepository();
 
-while(continuar)
-{
-    Mostrarmenu();
-    string comando = LeerEntrada("Inventario ");
-    Console.WriteLine($"Comando ingresado: {comando}");
+var laptop = ProductoFactory.Crear("Laptop", 1500.00m, 10, CategoriaProducto.Electronica);
+var mouse = ProductoFactory.Crear("Mouse", 25.00m, 50, CategoriaProducto.Electronica);
+var teclado = ProductoFactory.Crear("Teclado", 45.00m, 30, CategoriaProducto.Electronica);
+var silla = ProductoFactory.Crear("Silla de Oficina", 120.00m, 20, CategoriaProducto.Muebles);
+var escritorio = ProductoFactory.Crear("Escritorio", 250.00m, 15, CategoriaProducto.Muebles);
 
-    continuar = false;
-}
-//Funciones
-bool ProcesarComando(string comando)
+repositorio.Agregar(laptop);
+repositorio.Agregar(mouse);
+repositorio.Agregar(teclado);
+repositorio.Agregar(silla);
+repositorio.Agregar(escritorio);
+
+Console.WriteLine($"Productos agregados: {repositorio.Cantidad}\n");
+
+var electronicos = repositorio.BuscarPorCategoria(CategoriaProducto.Electronica);
+Console.WriteLine("Productos en categoría Electrónica:");
+
+foreach (var producto in electronicos)
 {
-    switch (comando.ToLower())
-    {
-        case "listar":
-            ListarProductos();
-            return true;
-        case "agregar":
-            AgregarProducto();
-            return true;
-        case "buscar":
-            BuscarProducto();
-            return true;
-        case "salir":
-            return false;
-        default:
-            Console.WriteLine($"Error: comando desconocido '{comando}'");
-            return true;
-    }
+    Console.WriteLine($"- {producto.Nombre} Precio: {producto.Precio:C}");
 }
-void ListarProductos()
+
+var conMouse = repositorio.BuscarPorNombre("Mouse");
+
+foreach (var producto in conMouse)
 {
-    Console.WriteLine($"Total: {cantidadProductos} de productos en el inventario");
-    Console.WriteLine($"Valor : ${valorTotalDelInventario:N2}");
+    Console.WriteLine($"Producto encontrado por nombre: {producto.Nombre} Precio: {producto.Precio:C}");
 }
-void AgregarProducto()
-{
-    Console.WriteLine("Funcionalidad de agregar producto (en desarrollo)");
-}
-void BuscarProducto()
-{
-    Console.WriteLine("Funcionalidad de buscar producto (en desarrollo)");
-}
-string LeerEntrada(string prompt)
-{
-    string salida = "El propmpt ingresado es: " + prompt;
-    return salida;
-}
-void MostarBanner()
-{
-    Console.WriteLine("==========================================");
-    Console.WriteLine("    SISTEMA DE GESTIÓN DE INVENTARIO      ");
-    Console.WriteLine("==========================================");
-    Console.WriteLine();
-}
-void Mostrarmenu()
-{
-    Console.WriteLine("MENU PRINCIPAL");
-    Console.WriteLine("1.  listar  - Muestra el estado del inventario");
-    Console.WriteLine("2.  agregar  - Agrega un nuevo producto al inventario");
-    Console.WriteLine("3.  buscar   - Busca un producto en el inventario");
-    Console.WriteLine("4.  salir    - Salir del programa");
-    Console.WriteLine();
-}
+
+var nombres = repositorio.ObtenerNombres();
+
+Console.WriteLine($"\nTodos los nombres: {string.Join(",", nombres)}");
+
+var hayStockBajo = repositorio.HayStockBajo();
+Console.WriteLine($"\n¿Hay productos con stock bajo? {(hayStockBajo ? "Sí" : "No")}");

@@ -1,7 +1,7 @@
-namespace InventarioApp.Factories;
 using InventarioApp.Models;
 
-public static class ProductFactory
+namespace InventarioApp.Factories;
+public static class ProductoFactory
 {
     private static int _nextId = 1;
 
