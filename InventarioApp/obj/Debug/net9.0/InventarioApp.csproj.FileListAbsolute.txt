@@ -12,3 +12,4 @@ C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\obj\Debug\net9.0\refin
 C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\obj\Debug\net9.0\InventarioApp.pdb
 C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\obj\Debug\net9.0\InventarioApp.genruntimeconfig.cache
 C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\obj\Debug\net9.0\ref\InventarioApp.dll
+C:\_smjg\Práctica\Cursos\Platzi\Inventario\InventarioApp\obj\Debug\net9.0\InventarioApp.sourcelink.json
